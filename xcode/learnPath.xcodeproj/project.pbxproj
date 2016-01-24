@@ -20,6 +20,7 @@
 		4028C3C3209148EAAAD641EE /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9A2C7CA244C741D3AD96B0BF /* CinderApp.icns */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		6D3ADFB81C51D7080042F1D0 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D3ADFB61C51D7080042F1D0 /* Particle.cpp */; };
+		6DAA94AC1C53DC8B00BB4D26 /* Obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6DAA94AA1C53DC8B00BB4D26 /* Obstacle.cpp */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,8 @@
 		6CFDCCCD0CF144D28A8CEABA /* learnPathApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = learnPathApp.cpp; path = ../src/learnPathApp.cpp; sourceTree = "<group>"; };
 		6D3ADFB61C51D7080042F1D0 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Particle.cpp; sourceTree = "<group>"; };
 		6D3ADFB71C51D7080042F1D0 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
+		6DAA94AA1C53DC8B00BB4D26 /* Obstacle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Obstacle.cpp; sourceTree = "<group>"; };
+		6DAA94AB1C53DC8B00BB4D26 /* Obstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacle.h; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* learnPath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learnPath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2C7CA244C741D3AD96B0BF /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +84,7 @@
 			children = (
 				6D3ADFB61C51D7080042F1D0 /* Particle.cpp */,
 				6CFDCCCD0CF144D28A8CEABA /* learnPathApp.cpp */,
+				6DAA94AA1C53DC8B00BB4D26 /* Obstacle.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -136,6 +140,7 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				6DAA94AB1C53DC8B00BB4D26 /* Obstacle.h */,
 				6D3ADFB71C51D7080042F1D0 /* Particle.h */,
 				0E72527ACE9F4B8FB8CBB04B /* Resources.h */,
 				493D16F40DDD4B1FBEA5956C /* learnPath_Prefix.pch */,
@@ -226,6 +231,7 @@
 			files = (
 				0CEA698936334D41B642AF65 /* learnPathApp.cpp in Sources */,
 				6D3ADFB81C51D7080042F1D0 /* Particle.cpp in Sources */,
+				6DAA94AC1C53DC8B00BB4D26 /* Obstacle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

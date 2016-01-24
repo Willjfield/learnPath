@@ -2,6 +2,7 @@
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 #include "Particle.h"
+#include "Obstacle.h"
 #include "cinder/Rand.h"
 
 using namespace ci;
@@ -15,20 +16,32 @@ class learnPathApp : public App {
 	void update() override;
 	void draw() override;
     
-    Particle finder;
-    ci::vec2 start;
+    vec2 ftarget;
     
+    const int NUMPARTICLES = 50;
+    const int NUMOBS = 75;
     
+    std::vector<Particle*> particles;
+    std::vector<Obstacle*> obs;
 };
 
 void learnPathApp::setup()
 {
-    start = ci::vec2(getWindowWidth()/10,getWindowHeight()/2);
-    finder = Particle(start);
-    
-    for(int i = 0;i<finder.steps.size();i++){
-    cout<<finder.steps[i]<<endl;
+    for(int i = 0;i<NUMOBS;i++){
+        Rand::randomize();
+        Obstacle* ob = new Obstacle();
+        obs.push_back(ob);
     }
+    
+    ftarget = ci::vec2(randFloat(getWindowWidth()/2)+getWindowWidth()/4,randFloat(getWindowHeight()/2)+getWindowHeight()/4);
+    
+    for(int i = 0;i<NUMPARTICLES;i++){
+        Rand::randomize();
+        vec2 fstart = ci::vec2(randFloat(getWindowWidth()),randFloat(getWindowHeight()));
+        Particle* finder = new Particle(fstart, ftarget, .1, obs);
+        particles.push_back(finder);
+    }
+
 }
 
 void learnPathApp::mouseDown( MouseEvent event )
@@ -42,7 +55,20 @@ void learnPathApp::update()
 void learnPathApp::draw()
 {
 	gl::clear( Color( 0, 0, 0 ) );
-    finder.run();
+    
+    gl::drawStrokedCircle(vec2(ftarget.x,ftarget.y), 20);
+    
+    for(int i = 0;i<NUMPARTICLES;i++){
+        for(int j = 0;j<5;j++){
+        Rand::randomize();
+        particles[i]->run();
+        }
+    }
+    
+    for(int i = 0;i<NUMOBS;i++){
+        Rand::randomize();
+        obs[i]->display();
+    }
 }
 
 CINDER_APP( learnPathApp, RendererGl )
