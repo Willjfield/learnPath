@@ -19,7 +19,7 @@ Particle::Particle()
 
 Particle::Particle(ci::vec2 location, ci::vec2 tLocation, float rSeed, std::vector<Obstacle*> obs)
 {
-    NUMSTEPS = getWindowWidth()+getWindowHeight()+1000;
+    NUMSTEPS = (getWindowWidth()+getWindowHeight())*2;
     STEPSIZE = 1;
     pColor = Color8u(randFloat(0, 255),randFloat(0, 255),randFloat(0, 255));
     
